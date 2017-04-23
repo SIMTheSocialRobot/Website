@@ -35,14 +35,31 @@ img.logo {
 	font-family: 'Roboto'
 }
 
+.about {
+	max-width: 50%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.small-text {
+	font-size: smaller; 
+}
+
 .halign {
+	margin: 0 auto;
 	text-align: center;
 }
 
 * > .valign {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(50%);
+}
+
+.cover + div {
+	position: absolute;
+	top: 100%;
+	width: 100%;
 }
 
 @media screen and (min-resolution: 2dppx) {
