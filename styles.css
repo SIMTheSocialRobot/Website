@@ -10,6 +10,7 @@ a, a:visited {
 
 body {
 	font-family: 'Roboto';
+	font-size: 14pt;
 	background-color: #F9A51B;
 	color: white;
 	margin: 0px;
@@ -31,7 +32,6 @@ img.logo {
 
 .ticker-text {
 	margin-left: 1vw;
-	font-size: 1vw;
 	font-family: 'Roboto'
 }
 
@@ -44,3 +44,10 @@ img.logo {
     top: 50%;
     transform: translateY(-50%);
 }
+
+@media screen and (min-resolution: 2dppx) {
+	body { font-size: 22pt; }
+	img.logo { min-width: 75% }
+	.tagline { margin-left: 1.25vw; font-size: 4.5vw }
+}
+
