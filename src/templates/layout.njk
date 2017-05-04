@@ -1,0 +1,22 @@
+{% set meta = {
+        url: 'http://simthesocialrobot.com',
+        site: 'SIM: The Social Robot'
+}%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {# Metadata #}
+        {% include "partials/meta.njk" %}
+
+        {# Google Fonts #}
+
+        {# Stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{{ var.styles }}" />
+        {% include "partials/analytics.njk" %}
+    </head>
+
+    <body class="{{ var.bodyClass }} ">
+        {% block content %}{% endblock %}
+    </body>
+</html>
