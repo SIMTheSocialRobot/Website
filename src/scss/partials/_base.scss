@@ -1,0 +1,67 @@
+// Google Fonts
+// -------------
+// @import url('https ://fonts.googleapis.com/css?family =Roboto+Slab:300,400|Source+Sans+Pro:400,900');
+
+// Utilities
+// -------------
+@import 'vendor/normalize';
+
+// Screen Sizes
+$screen-mob-sm:      20em;
+$screen-mob:         22.5em;
+$screen-tablet:      48em;
+$screen-laptop:      60em;
+$screen-desktop:     80em;
+$screen-superhuge:   160em;
+
+@import 'partials/breakpoints';
+
+// Colors
+$black: #303030;
+$true-black: #000;
+$white: #fcfcfc;
+$gray: #f8f8f8;
+$primary: #ea4335; // Central
+$yellow: #fcf113;
+
+    //// SIM
+    $sim: #f76b1c;
+    $sim-alt: #ecaf50;
+    //// Xactly
+    $xtly: #0092ff;
+    $xtly-alt: #326ec1;
+    //// Puppy Harmony
+    $puppy: #4bc388;
+    $puppy-alt: #6dc3b1;
+    //// Central Cinema
+    $central: #ea4335;
+    $central-alt: #ae2e5c;
+    //// Galleries
+    $gallery: #7415ce;
+    $gallery-alt: #26072f;
+
+    //// Social Icons
+    $twitter: #28aae2;
+    $facebook: #3c5a98;
+    $email: #dd4b38;
+    $linkedin: #047cb7;
+    $dribbble: #ea4c89;
+    $px500: #0099e5;
+
+// Typography
+$sans-serif: 'Source Sans Pro', helvetica, sans-serif;
+$heading: 'Roboto Slab', garamond, serif;
+    //// Weights & styles
+    $bold: 900;
+    $reg: 400;
+    $thin: 300;
+
+// Default Tranisitions & Animations
+$default-transition: .2s all ease-in-out;
+// $project-easing: cubic-bezier(.32,.01,.19,1);
+$project-easing: ease-in-out;
+// Default Widths
+$content-width: 36em;
+$site-width-max: 160em;
+
+@import 'partials/mixins';

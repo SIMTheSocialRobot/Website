@@ -48,7 +48,7 @@ sources =
     scripts: 'src/scripts/**/*.js'
 
 dests =
-    content: 'app'
+    content: 'app/'
     styles: 'app/css'
     images: 'app/img'
     scripts: 'app/scripts'
@@ -79,11 +79,11 @@ gulp.task 'content-task', ->
     return gulp.src(sources.content)
     .pipe plumber({ errorHandler: onError })
     .pipe json ->
-        require './_src/data.json'
+        require './src/data.json'
     .pipe nunjucks({ path: [sources.templates] })
     .pipe stripComments()
     .pipe prettify()
-    .pipe gulp.dest('./')
+    .pipe gulp.dest(dests.content)
     .pipe bSync.stream()
 
 ## Styles
