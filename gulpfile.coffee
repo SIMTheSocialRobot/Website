@@ -165,4 +165,5 @@ gulp.task 'watch', ->
     gulp.watch(sources.images, ['images-task'])
 
 ## Default
-gulp.task 'default', ['content-task', 'images-task', 'styles-task', 'sync-task', 'watch'], ->
+gulp.task 'build-task', ['content-task', 'images-task', 'styles-task']
+gulp.task 'default', ['build-task', 'sync-task', 'watch'], ->
