@@ -1,0 +1,92 @@
+// @include breakpoint
+// via http://css-tricks.com/media-queries-sass-3-2-and-codekit/
+//---------------------------------------------------------------
+// Use: @include breakpoint(variable) { *styles here* }
+//---------------------------------------------------------------
+
+@mixin breakpoint($break-width) {
+  @if $break-width == mobile-sm {
+    @media (min-width: $screen-mob-sm) { @content; }
+  } @else if $break-width == mobile {
+    @media (min-width: $screen-mob) { @content; }
+  } @else if $break-width == tablet {
+    @media (min-width: $screen-tablet) { @content; }
+  } @else if $break-width == laptop {
+    @media (min-width: $screen-laptop) { @content; }
+  } @else if $break-width == desktop {
+    @media (min-width: $screen-desktop) { @content; }
+  } @else {
+    @media (min-width: $break-width) { @content; }
+  }
+}
+
+//---------------------------------------------------------------
+// Responsive Visibility Classes
+//---------------------------------------------------------------
+
+.visible-phone,
+.visible-tablet,
+.visible-laptop,
+.visible-desktop {
+  display: none !important;
+}
+
+.visible-phone {
+  @media (max-width: $screen-tablet - 1) {
+    display: block !important;
+  }
+}
+
+.visible-tablet {
+  @media (min-width: $screen-tablet) and (max-width: $screen-laptop - 1) {
+    display: block !important;
+  }
+}
+
+.visible-laptop {
+  @media (min-width: $screen-laptop) and (max-width: $screen-desktop - 1) {
+    display: block !important;
+  }
+}
+
+.visible-laptop-plus {
+  @media (min-width: $screen-laptop) {
+    display: block !important;
+  }
+}
+
+.visible-desktop {
+  @media (min-width: $screen-desktop) {
+    display: block !important;
+  }
+}
+
+.hidden-phone {
+  @media (max-width: $screen-tablet - 1) {
+    display: none !important;
+  }
+}
+
+.hidden-phone-landscape {
+  @media (max-width: $screen-tablet - 1) and (orientation: landscape){
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @media (min-width: $screen-tablet) and (max-width: $screen-laptop - 1) {
+    display: none !important;
+  }
+}
+
+.hidden-laptop {
+  @media (min-width: $screen-laptop) and (max-width: $screen-desktop - 1) {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @media (min-width: $screen-desktop) {
+    display: none !important;
+  }
+}

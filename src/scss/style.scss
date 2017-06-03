@@ -1,0 +1,70 @@
+@import 'partials/base';
+
+* > .valign {
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+a, a:visited {
+	color: $white;
+	text-decoration: underline;
+}
+
+body {
+	background-color: $sim;
+	font-family: 'Roboto';
+	font-size: 14pt;
+	color: $white;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+img.logo {
+	max-width: 50%;
+}
+
+.about {
+	max-width: 50%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.cover + div {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+}
+
+.halign {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.small-text {
+	font-size: smaller; 
+}
+
+.tagline {
+	margin-left: 1vw;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	font-size: 3vw;
+	font-family: 'Roboto'
+}
+
+.ticker-text {
+	margin-left: 1vw;
+	font-family: 'Roboto'
+}
+
+.twitter {
+	background-image: url("/img/twitter.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	height: 50px;
+	width: 50px;
+}

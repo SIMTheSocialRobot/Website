@@ -1,0 +1,25 @@
+{% set meta = {
+    url: 'http://simthesocialrobot.com',
+    title: 'SIM: The Social Robot',
+    desc: 'Designing for Affective Human-Robot Interaction',
+    site: 'SIM: The Social Robot',
+    image: '/img/sim_badge.png'
+}%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {# Metadata #}
+        {% include "partials/meta.njk" %}
+
+        {# Google Fonts #}
+
+        {# Stylesheets #}
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        {% include "partials/analytics.njk" %}
+    </head>
+
+    <body class="{{ var.bodyClass }} ">
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,52 @@
+//// Aspect Ratio
+@mixin aspect-ratio($ratio: 1 1, $selector: '> :first-child') {
+	$selector: unquote($selector);
+	position: relative;
+
+    &::before {
+        display: block;
+        content: '';
+        width: 100%;
+        padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+      }
+
+	#{$selector} {
+        position: absolute;
+		top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+	}
+}
+//// Soft Shadows
+@mixin soft-shadow($blur: 32, $opacity: .28) {
+    box-shadow: 0 0 $blur + px rgba(0, 0, 0, $opacity);
+}
+//// Video Embeds
+@mixin video-embed($ratio: 16 9) {
+    @include aspect-ratio($ratio, 'iframe');
+    iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+//// Center mixin for nav
+@mixin center($xy:xy) {
+	@if $xy == xy {
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		right: auto;
+		transform: translate(-50%, -50%);
+	} @else if $xy == x {
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+	} @else if $xy == y {
+		top: 50%;
+		bottom: auto;
+		transform: translateY(-50%);
+	}
+}
