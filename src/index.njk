@@ -9,8 +9,9 @@
 </div>
 
 <div class="content halign">
-		<p class="video">
-			<iframe src="https://player.vimeo.com/video/207216272?color=F9A51B&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="valign">
+		<p class="video halign">
+			<iframe src="https://player.vimeo.com/video/207216272?color=F9A51B&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</p>
 		<p class="about small-text halign">
 			SIM was created as the Capstone project of Sahil Anand, John Luetke, Nikhil Venkatesh and Dorothy Wong for thier Master's degree in <a href="http://hcde.uw.edu" target="_blank">Human-Centered Design and Engineering</a> at the <a href="http://uw.edu" target="_blank">University of Washington</a>.
@@ -19,4 +20,20 @@
 			<a class="twitter halign" target="_blank" href="//twitter.com/SIMSocialRobot"></a>
 		</p>
 	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $(window).resize(function() {
+    w_buffer = 0.05;
+    w = $(window).width();
+    w = w - (w * w_buffer * 2);
+    if ( w < 500) w = 500;
+    h = (w*9)/16;
+    $( ".video iframe" ).css("width", w);
+    $( ".video iframe" ).css("height", h);
+  });
+  $(window).resize();
+});
+</script>
 {% endblock %}
