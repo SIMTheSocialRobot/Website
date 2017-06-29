@@ -28,7 +28,7 @@ $(document).ready(function() {
     w_buffer = 0.05;
     w = $(window).width();
     w = w - (w * w_buffer * 2);
-    if ( w < 500) w = 500;
+    if ( w < 500 / window.getDevicePixelRatio() ) w = 500;
     h = (w*9)/16;
     $( ".video iframe" ).css("width", w);
     $( ".video iframe" ).css("height", h);
