@@ -1,8 +1,7 @@
 @import 'partials/base';
 
 * > .valign {
-    position: relative;
-    transform: translateY(50%);
+
 }
 
 a, a:visited {
@@ -31,10 +30,48 @@ img.logo {
 	padding-bottom: 5%;
 }
 
-.cover {
+.fullscreen-cover {
+	&.one {
+		.fullscreen-flex ~ div {
+			top: 100%;
+		}
+	}
+
+	.fullscreen-flex {
+		~ div {
+			position: absolute;
+		}
+	}
+}
+
+.fullscreen-flex {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	& .two {
+		height: 200%;
+	}
+
+	& .three {
+		height: 300%;
+	}
+
+	& .four {
+		height: 400%;
+	}
+
+	.identity {
+		align-self: flex-end;
+		width: 100%;
+
+	}
+	
 }
 
 .cover + div {

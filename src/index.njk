@@ -1,25 +1,26 @@
 {% extends "layout.njk" %}
+{% set var = {
+     bodyClass: "fullscreen-cover one"
+}%}
 {% block content %}
-<div class="cover halign">
-	<div class="valign">
+<div class="fullscreen-flex halign">
+	<div class="identity">
 		<img class="logo" src="/img/logo_transparent.svg" />
 		<p class="tagline">The Social Robot</p>
-		<p class="ticker-text"><a href="SIM_ICSR_2017_Abstract.pdf" target="_blank">Accepted</a> to the <a href="https://www.waset.org/conference/2017/08/amsterdam/ICSR" target="_blank">ICSR 2017 Conference in Amsterdam!</a></p>
 	</div>
+	<p class="ticker-text"><a href="SIM_ICSR_2017_Abstract.pdf" target="_blank">Accepted</a> to the <a href="https://www.waset.org/conference/2017/08/amsterdam/ICSR" target="_blank">ICSR 2017 Conference in Amsterdam!</a></p>
 </div>
 
-<div class="content halign">
-	<div class="valign">
-		<p class="video halign">
-			<iframe src="https://player.vimeo.com/video/207216272?color=F9A51B&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</p>
-		<p class="about small-text halign">
-			SIM was created as the Capstone project of Sahil Anand, John Luetke, Nikhil Venkatesh and Dorothy Wong for thier Master's degree in <a href="http://hcde.uw.edu" target="_blank">Human-Centered Design and Engineering</a> at the <a href="http://uw.edu" target="_blank">University of Washington</a>.
-		</p>
-		<p class="social small-text halign">
-			<a class="twitter halign" target="_blank" href="//twitter.com/SIMSocialRobot"></a>
-		</p>
-	</div>
+<div class="fullscreen-flex halign">
+	<p class="video halign">
+		<iframe src="https://player.vimeo.com/video/207216272?color=F9A51B&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</p>
+	<p class="about small-text halign">
+		SIM was created as the Capstone project of Sahil Anand, John Luetke, Nikhil Venkatesh and Dorothy Wong for thier Master's degree in <a href="http://hcde.uw.edu" target="_blank">Human-Centered Design and Engineering</a> at the <a href="http://uw.edu" target="_blank">University of Washington</a>.
+	</p>
+	<p class="social small-text halign">
+		<a class="twitter halign" target="_blank" href="//twitter.com/SIMSocialRobot"></a>
+	</p>
 </div>
 
 <script>
