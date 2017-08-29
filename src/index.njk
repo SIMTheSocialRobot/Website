@@ -18,7 +18,9 @@
 		SIM was created as the Capstone project of Sahil Anand, John Luetke, Nikhil Venkatesh and Dorothy Wong for thier Master's degree in <a href="http://hcde.uw.edu" target="_blank">Human-Centered Design and Engineering</a> at the <a href="http://uw.edu" target="_blank">University of Washington</a>.
 	</p>
 	<p class="social small-text halign">
-		<a class="twitter halign" target="_blank" href="//twitter.com/SIMSocialRobot"></a>
+		<a class="twitter halign" target="_blank" href="//twitter.com/SIMSocialRobot">
+            <img src="/img/twitter.svg" class="svg" />
+		</a>
 	</p>
 </div>
 
@@ -33,6 +35,45 @@ $(document).ready(function() {
     $( ".video iframe" ).css("width", w);
     $( ".video iframe" ).css("height", h);
   });
+
+/*
+ * Replace all SVG images with inline SVG
+ * https://stackoverflow.com/a/24933495/705263
+ */
+$('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+
+        // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
+        if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+            $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+        }
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+
+    }, 'xml');
+
+});
+
   $(window).resize();
 });
 </script>
