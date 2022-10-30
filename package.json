@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/SIMTheSocialRobot/Website#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.27.10",
     "coffee-script": "^1.12.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
